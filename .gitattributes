@@ -1,0 +1,8 @@
+# 对所有文件进行标准化
+* text=auto
+
+# 指定文件使用LF
+*.py text eol=lf
+*.toml text eol=lf
+.python-version text eol=lf
+*.lock text eol=lf
