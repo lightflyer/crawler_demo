@@ -1,0 +1,1882 @@
+{
+  "id_goods": 314868,
+  "id_shop": 1,
+  "id_alias": "112441106Q",
+  "id_brand": "2",
+  "pro_title": "安踏狂潮6代男子氮科技澎湃回弹篮球鞋",
+  "pro_name": "狂潮6代篮球鞋",
+  "pro_info": "",
+  "pro_content": "",
+  "pro_intro": "",
+  "keyword": "安踏篮球系列安踏狂潮6代男子篮球鞋-112441106Q",
+  "selling_point_label": "",
+  "cate_id": "",
+  "min_price": "799.00",
+  "max_price": "799.00",
+  "price": "799.00",
+  "market_price": "799.00",
+  "division_price": "0.00",
+  "add_time": 1733472393,
+  "up_time": 1733479184,
+  "ficti": 0,
+  "sales": 0,
+  "sales_week": 0,
+  "sales_month": 0,
+  "w_order": 0,
+  "onsell": 1,
+  "mem_type": 0,
+  "image": {
+    "big": [
+      {
+        "id_pi": 9175067,
+        "id_pa": 0,
+        "id_goods": 314868,
+        "path": "https://img.fishfay.com/shopgoods/21/112441106Q/zt-112441106Q/ee331f54dbc010d5a0a2f93d382f772f.jpg",
+        "order_id": 1,
+        "image_type": "big",
+        "status": 1
+      }
+    ],
+    "bd": [
+      {
+        "id_pi": 9175068,
+        "id_pa": 0,
+        "id_goods": 314868,
+        "path": "https://img.fishfay.com/shopgoods/21/112441106Q/bd-112441106Q-1/039ea379c6cb0a8993108c39bf552bc1.jpg",
+        "order_id": 1,
+        "image_type": "bd",
+        "status": 1
+      },
+      {
+        "id_pi": 9175069,
+        "id_pa": 0,
+        "id_goods": 314868,
+        "path": "https://img.fishfay.com/shopgoods/21/112441106Q/bd-112441106Q-2/a658946087a188573b3aac14c46079b7.jpg",
+        "order_id": 2,
+        "image_type": "bd",
+        "status": 1
+      },
+      {
+        "id_pi": 9175070,
+        "id_pa": 0,
+        "id_goods": 314868,
+        "path": "https://img.fishfay.com/shopgoods/21/112441106Q/bd-112441106Q-3/a4b6554fdfb3d2c70fc8665e14d75ebb.jpg",
+        "order_id": 3,
+        "image_type": "bd",
+        "status": 1
+      },
+      {
+        "id_pi": 9175071,
+        "id_pa": 0,
+        "id_goods": 314868,
+        "path": "https://img.fishfay.com/shopgoods/21/112441106Q/bd-112441106Q-4/4164ddb6483173efbc90b764a0d1c584.jpg",
+        "order_id": 4,
+        "image_type": "bd",
+        "status": 1
+      },
+      {
+        "id_pi": 9175072,
+        "id_pa": 0,
+        "id_goods": 314868,
+        "path": "https://img.fishfay.com/shopgoods/21/112441106Q/bd-112441106Q-5/cd0f124892a574ad5e078a0c97479910.jpg",
+        "order_id": 5,
+        "image_type": "bd",
+        "status": 1
+      },
+      {
+        "id_pi": 9175073,
+        "id_pa": 0,
+        "id_goods": 314868,
+        "path": "https://img.fishfay.com/shopgoods/21/112441106Q/bd-112441106Q-6/d3e905d2d7e8e89b2e18b8c98d795387.jpg",
+        "order_id": 6,
+        "image_type": "bd",
+        "status": 1
+      },
+      {
+        "id_pi": 9175074,
+        "id_pa": 0,
+        "id_goods": 314868,
+        "path": "https://img.fishfay.com/shopgoods/21/112441106Q/bd-112441106Q-99/ee331f54dbc010d5a0a2f93d382f772f.jpg",
+        "order_id": 99,
+        "image_type": "bd",
+        "status": 1
+      }
+    ],
+    "master": {
+      "2840039": {
+        "1": {
+          "id_pi": 9175062,
+          "id_pa": 2840039,
+          "id_goods": 314868,
+          "path": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-1/ee331f54dbc010d5a0a2f93d382f772f.jpg",
+          "order_id": 1,
+          "image_type": "master",
+          "status": 1
+        },
+        "2": {
+          "id_pi": 9175063,
+          "id_pa": 2840039,
+          "id_goods": 314868,
+          "path": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-2/811bae18da87197ac9fa47a8bf692731.jpg",
+          "order_id": 2,
+          "image_type": "master",
+          "status": 1
+        },
+        "3": {
+          "id_pi": 9175064,
+          "id_pa": 2840039,
+          "id_goods": 314868,
+          "path": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-3/ed961ee23d0bc4e6e1d43ca136102004.jpg",
+          "order_id": 3,
+          "image_type": "master",
+          "status": 1
+        },
+        "4": {
+          "id_pi": 9175065,
+          "id_pa": 2840039,
+          "id_goods": 314868,
+          "path": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-4/3e6d58cc69382de77538ce61d1f1e4f1.jpg",
+          "order_id": 4,
+          "image_type": "master",
+          "status": 1
+        },
+        "5": {
+          "id_pi": 9175066,
+          "id_pa": 2840039,
+          "id_goods": 314868,
+          "path": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-5/bad65cbec02fbe5e219064c244a54da5.jpg",
+          "order_id": 5,
+          "image_type": "master",
+          "status": 1
+        }
+      },
+      "2840040": {
+        "1": {
+          "id_pi": 9175057,
+          "id_pa": 2840040,
+          "id_goods": 314868,
+          "path": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-1/dd25b431eac378767a017d1aecdfaee9.jpg",
+          "order_id": 1,
+          "image_type": "master",
+          "status": 1
+        },
+        "2": {
+          "id_pi": 9175058,
+          "id_pa": 2840040,
+          "id_goods": 314868,
+          "path": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-2/24e0be3149f3c7cdfbd2d43b8c57c8f7.jpg",
+          "order_id": 2,
+          "image_type": "master",
+          "status": 1
+        },
+        "3": {
+          "id_pi": 9175059,
+          "id_pa": 2840040,
+          "id_goods": 314868,
+          "path": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-3/b685174d70387d9ade0700f2ea7a16de.jpg",
+          "order_id": 3,
+          "image_type": "master",
+          "status": 1
+        },
+        "4": {
+          "id_pi": 9175060,
+          "id_pa": 2840040,
+          "id_goods": 314868,
+          "path": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-4/79e373edd2f958b59f0ff044bdf19185.jpg",
+          "order_id": 4,
+          "image_type": "master",
+          "status": 1
+        },
+        "5": {
+          "id_pi": 9175061,
+          "id_pa": 2840040,
+          "id_goods": 314868,
+          "path": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-5/45292eb37ecb2ad8ffc332c7f7c1be08.jpg",
+          "order_id": 5,
+          "image_type": "master",
+          "status": 1
+        }
+      },
+      "2840041": {
+        "1": {
+          "id_pi": 9175052,
+          "id_pa": 2840041,
+          "id_goods": 314868,
+          "path": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-1/dde08eb68956b76d45e64429535501a5.jpg",
+          "order_id": 1,
+          "image_type": "master",
+          "status": 1
+        },
+        "2": {
+          "id_pi": 9175053,
+          "id_pa": 2840041,
+          "id_goods": 314868,
+          "path": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-2/a28fc51936f5a12d25880cbf011bee62.jpg",
+          "order_id": 2,
+          "image_type": "master",
+          "status": 1
+        },
+        "3": {
+          "id_pi": 9175054,
+          "id_pa": 2840041,
+          "id_goods": 314868,
+          "path": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-3/b28dde6ae612c8032d7a2785e78504fe.jpg",
+          "order_id": 3,
+          "image_type": "master",
+          "status": 1
+        },
+        "4": {
+          "id_pi": 9175055,
+          "id_pa": 2840041,
+          "id_goods": 314868,
+          "path": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-4/b29ffcb06346751cf708d65e3010c9ec.jpg",
+          "order_id": 4,
+          "image_type": "master",
+          "status": 1
+        },
+        "5": {
+          "id_pi": 9175056,
+          "id_pa": 2840041,
+          "id_goods": 314868,
+          "path": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-5/4d08289561d8f0770a300bf0d75abb91.jpg",
+          "order_id": 5,
+          "image_type": "master",
+          "status": 1
+        }
+      }
+    }
+  },
+  "video": "",
+  "pre_switch": 0,
+  "pre_desc": "",
+  "pre_price": "0.00",
+  "updated_at": "2024-12-06 17:59:44",
+  "is_promotions_goods": 0,
+  "promotions_info": "",
+  "bind_id": 0,
+  "share_count": 0,
+  "is_hide": 0,
+  "dress_video": "",
+  "dress_video_cover": "",
+  "market_time": 0,
+  "color": {
+    "2840039": {
+      "id_pa": 2840039,
+      "id_pac": 1,
+      "status": 0,
+      "id_goods": 314868,
+      "attr_name": "安踏白/泥沙灰/基础黑",
+      "attr_alias": "112441106Q-1",
+      "order_id": 1,
+      "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-1/ee331f54dbc010d5a0a2f93d382f772f.jpg",
+      "video_url": "",
+      "attr_cate_name": "颜色",
+      "attr_cate_code": "color"
+    },
+    "2840040": {
+      "id_pa": 2840040,
+      "id_pac": 1,
+      "status": 0,
+      "id_goods": 314868,
+      "attr_name": "浅雾紫/嫩芽绿/甘蓝紫",
+      "attr_alias": "112441106Q-2",
+      "order_id": 2,
+      "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-1/dd25b431eac378767a017d1aecdfaee9.jpg",
+      "video_url": "",
+      "attr_cate_name": "颜色",
+      "attr_cate_code": "color"
+    },
+    "2840041": {
+      "id_pa": 2840041,
+      "id_pac": 1,
+      "status": 0,
+      "id_goods": 314868,
+      "attr_name": "芯片灰/基础黑",
+      "attr_alias": "112441106Q-3",
+      "order_id": 3,
+      "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-1/dde08eb68956b76d45e64429535501a5.jpg",
+      "video_url": "",
+      "attr_cate_name": "颜色",
+      "attr_cate_code": "color"
+    }
+  },
+  "sku_info": [
+    {
+      "attr": [
+        {
+          "id_pa": 2840039,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "安踏白/泥沙灰/基础黑",
+          "attr_alias": "112441106Q-1",
+          "order_id": 1,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-1/ee331f54dbc010d5a0a2f93d382f772f.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840047,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "39",
+          "attr_alias": "39",
+          "order_id": 46,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037877,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-1/ee331f54dbc010d5a0a2f93d382f772f.jpg",
+        "idpas": "2840039,2840047",
+        "attr_name": "颜色:安踏白/泥沙灰/基础黑;尺码:39",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578467",
+        "stock": 8,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736318791,
+        "id_pa_group": [
+          2840039,
+          2840047
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840039,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "安踏白/泥沙灰/基础黑",
+          "attr_alias": "112441106Q-1",
+          "order_id": 1,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-1/ee331f54dbc010d5a0a2f93d382f772f.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840046,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "40",
+          "attr_alias": "40",
+          "order_id": 47,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037876,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-1/ee331f54dbc010d5a0a2f93d382f772f.jpg",
+        "idpas": "2840039,2840046",
+        "attr_name": "颜色:安踏白/泥沙灰/基础黑;尺码:40",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578450",
+        "stock": 32,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736450009,
+        "id_pa_group": [
+          2840039,
+          2840046
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840039,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "安踏白/泥沙灰/基础黑",
+          "attr_alias": "112441106Q-1",
+          "order_id": 1,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-1/ee331f54dbc010d5a0a2f93d382f772f.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840045,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "41",
+          "attr_alias": "41",
+          "order_id": 49,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037875,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-1/ee331f54dbc010d5a0a2f93d382f772f.jpg",
+        "idpas": "2840039,2840045",
+        "attr_name": "颜色:安踏白/泥沙灰/基础黑;尺码:41",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578443",
+        "stock": 68,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736450012,
+        "id_pa_group": [
+          2840039,
+          2840045
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840039,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "安踏白/泥沙灰/基础黑",
+          "attr_alias": "112441106Q-1",
+          "order_id": 1,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-1/ee331f54dbc010d5a0a2f93d382f772f.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840048,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "42",
+          "attr_alias": "42",
+          "order_id": 51,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037878,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-1/ee331f54dbc010d5a0a2f93d382f772f.jpg",
+        "idpas": "2840039,2840048",
+        "attr_name": "颜色:安踏白/泥沙灰/基础黑;尺码:42",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578436",
+        "stock": 77,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736450012,
+        "id_pa_group": [
+          2840039,
+          2840048
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840039,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "安踏白/泥沙灰/基础黑",
+          "attr_alias": "112441106Q-1",
+          "order_id": 1,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-1/ee331f54dbc010d5a0a2f93d382f772f.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840049,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "42.5",
+          "attr_alias": "42.5",
+          "order_id": 52,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037879,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-1/ee331f54dbc010d5a0a2f93d382f772f.jpg",
+        "idpas": "2840039,2840049",
+        "attr_name": "颜色:安踏白/泥沙灰/基础黑;尺码:42.5",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578429",
+        "stock": 42,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736363208,
+        "id_pa_group": [
+          2840039,
+          2840049
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840039,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "安踏白/泥沙灰/基础黑",
+          "attr_alias": "112441106Q-1",
+          "order_id": 1,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-1/ee331f54dbc010d5a0a2f93d382f772f.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840051,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "43",
+          "attr_alias": "43",
+          "order_id": 53,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037881,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-1/ee331f54dbc010d5a0a2f93d382f772f.jpg",
+        "idpas": "2840039,2840051",
+        "attr_name": "颜色:安踏白/泥沙灰/基础黑;尺码:43",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578412",
+        "stock": 81,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736450004,
+        "id_pa_group": [
+          2840039,
+          2840051
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840039,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "安踏白/泥沙灰/基础黑",
+          "attr_alias": "112441106Q-1",
+          "order_id": 1,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-1/ee331f54dbc010d5a0a2f93d382f772f.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840043,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "44",
+          "attr_alias": "44",
+          "order_id": 55,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037873,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-1/ee331f54dbc010d5a0a2f93d382f772f.jpg",
+        "idpas": "2840039,2840043",
+        "attr_name": "颜色:安踏白/泥沙灰/基础黑;尺码:44",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578405",
+        "stock": 25,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736450014,
+        "id_pa_group": [
+          2840039,
+          2840043
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840039,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "安踏白/泥沙灰/基础黑",
+          "attr_alias": "112441106Q-1",
+          "order_id": 1,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-1/ee331f54dbc010d5a0a2f93d382f772f.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840050,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "44.5",
+          "attr_alias": "44.5",
+          "order_id": 56,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037880,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-1/ee331f54dbc010d5a0a2f93d382f772f.jpg",
+        "idpas": "2840039,2840050",
+        "attr_name": "颜色:安踏白/泥沙灰/基础黑;尺码:44.5",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578399",
+        "stock": 27,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736318789,
+        "id_pa_group": [
+          2840039,
+          2840050
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840039,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "安踏白/泥沙灰/基础黑",
+          "attr_alias": "112441106Q-1",
+          "order_id": 1,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-1/ee331f54dbc010d5a0a2f93d382f772f.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840042,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "45",
+          "attr_alias": "45",
+          "order_id": 57,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037872,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-1/ee331f54dbc010d5a0a2f93d382f772f.jpg",
+        "idpas": "2840039,2840042",
+        "attr_name": "颜色:安踏白/泥沙灰/基础黑;尺码:45",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578382",
+        "stock": 12,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736450015,
+        "id_pa_group": [
+          2840039,
+          2840042
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840039,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "安踏白/泥沙灰/基础黑",
+          "attr_alias": "112441106Q-1",
+          "order_id": 1,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-1/ee331f54dbc010d5a0a2f93d382f772f.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840044,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "46",
+          "attr_alias": "46",
+          "order_id": 59,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037874,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-1-1/ee331f54dbc010d5a0a2f93d382f772f.jpg",
+        "idpas": "2840039,2840044",
+        "attr_name": "颜色:安踏白/泥沙灰/基础黑;尺码:46",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578375",
+        "stock": 2,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1733479263,
+        "id_pa_group": [
+          2840039,
+          2840044
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840040,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "浅雾紫/嫩芽绿/甘蓝紫",
+          "attr_alias": "112441106Q-2",
+          "order_id": 2,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-1/dd25b431eac378767a017d1aecdfaee9.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840047,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "39",
+          "attr_alias": "39",
+          "order_id": 46,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037887,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-1/dd25b431eac378767a017d1aecdfaee9.jpg",
+        "idpas": "2840040,2840047",
+        "attr_name": "颜色:浅雾紫/嫩芽绿/甘蓝紫;尺码:39",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578566",
+        "stock": 4,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1734118229,
+        "id_pa_group": [
+          2840040,
+          2840047
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840040,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "浅雾紫/嫩芽绿/甘蓝紫",
+          "attr_alias": "112441106Q-2",
+          "order_id": 2,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-1/dd25b431eac378767a017d1aecdfaee9.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840046,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "40",
+          "attr_alias": "40",
+          "order_id": 47,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037886,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-1/dd25b431eac378767a017d1aecdfaee9.jpg",
+        "idpas": "2840040,2840046",
+        "attr_name": "颜色:浅雾紫/嫩芽绿/甘蓝紫;尺码:40",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578559",
+        "stock": 10,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736410581,
+        "id_pa_group": [
+          2840040,
+          2840046
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840040,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "浅雾紫/嫩芽绿/甘蓝紫",
+          "attr_alias": "112441106Q-2",
+          "order_id": 2,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-1/dd25b431eac378767a017d1aecdfaee9.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840045,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "41",
+          "attr_alias": "41",
+          "order_id": 49,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037885,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-1/dd25b431eac378767a017d1aecdfaee9.jpg",
+        "idpas": "2840040,2840045",
+        "attr_name": "颜色:浅雾紫/嫩芽绿/甘蓝紫;尺码:41",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578542",
+        "stock": 21,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736450011,
+        "id_pa_group": [
+          2840040,
+          2840045
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840040,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "浅雾紫/嫩芽绿/甘蓝紫",
+          "attr_alias": "112441106Q-2",
+          "order_id": 2,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-1/dd25b431eac378767a017d1aecdfaee9.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840048,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "42",
+          "attr_alias": "42",
+          "order_id": 51,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037888,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-1/dd25b431eac378767a017d1aecdfaee9.jpg",
+        "idpas": "2840040,2840048",
+        "attr_name": "颜色:浅雾紫/嫩芽绿/甘蓝紫;尺码:42",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578535",
+        "stock": 25,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736450032,
+        "id_pa_group": [
+          2840040,
+          2840048
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840040,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "浅雾紫/嫩芽绿/甘蓝紫",
+          "attr_alias": "112441106Q-2",
+          "order_id": 2,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-1/dd25b431eac378767a017d1aecdfaee9.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840049,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "42.5",
+          "attr_alias": "42.5",
+          "order_id": 52,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037889,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-1/dd25b431eac378767a017d1aecdfaee9.jpg",
+        "idpas": "2840040,2840049",
+        "attr_name": "颜色:浅雾紫/嫩芽绿/甘蓝紫;尺码:42.5",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578528",
+        "stock": 15,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736450049,
+        "id_pa_group": [
+          2840040,
+          2840049
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840040,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "浅雾紫/嫩芽绿/甘蓝紫",
+          "attr_alias": "112441106Q-2",
+          "order_id": 2,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-1/dd25b431eac378767a017d1aecdfaee9.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840051,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "43",
+          "attr_alias": "43",
+          "order_id": 53,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037891,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-1/dd25b431eac378767a017d1aecdfaee9.jpg",
+        "idpas": "2840040,2840051",
+        "attr_name": "颜色:浅雾紫/嫩芽绿/甘蓝紫;尺码:43",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578511",
+        "stock": 21,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736450012,
+        "id_pa_group": [
+          2840040,
+          2840051
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840040,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "浅雾紫/嫩芽绿/甘蓝紫",
+          "attr_alias": "112441106Q-2",
+          "order_id": 2,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-1/dd25b431eac378767a017d1aecdfaee9.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840043,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "44",
+          "attr_alias": "44",
+          "order_id": 55,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037883,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-1/dd25b431eac378767a017d1aecdfaee9.jpg",
+        "idpas": "2840040,2840043",
+        "attr_name": "颜色:浅雾紫/嫩芽绿/甘蓝紫;尺码:44",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578504",
+        "stock": 4,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736410581,
+        "id_pa_group": [
+          2840040,
+          2840043
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840040,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "浅雾紫/嫩芽绿/甘蓝紫",
+          "attr_alias": "112441106Q-2",
+          "order_id": 2,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-1/dd25b431eac378767a017d1aecdfaee9.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840050,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "44.5",
+          "attr_alias": "44.5",
+          "order_id": 56,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037890,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-1/dd25b431eac378767a017d1aecdfaee9.jpg",
+        "idpas": "2840040,2840050",
+        "attr_name": "颜色:浅雾紫/嫩芽绿/甘蓝紫;尺码:44.5",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578498",
+        "stock": 7,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736450022,
+        "id_pa_group": [
+          2840040,
+          2840050
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840040,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "浅雾紫/嫩芽绿/甘蓝紫",
+          "attr_alias": "112441106Q-2",
+          "order_id": 2,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-1/dd25b431eac378767a017d1aecdfaee9.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840042,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "45",
+          "attr_alias": "45",
+          "order_id": 57,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037882,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-1/dd25b431eac378767a017d1aecdfaee9.jpg",
+        "idpas": "2840040,2840042",
+        "attr_name": "颜色:浅雾紫/嫩芽绿/甘蓝紫;尺码:45",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578481",
+        "stock": 2,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1733479263,
+        "id_pa_group": [
+          2840040,
+          2840042
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840040,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "浅雾紫/嫩芽绿/甘蓝紫",
+          "attr_alias": "112441106Q-2",
+          "order_id": 2,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-1/dd25b431eac378767a017d1aecdfaee9.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840044,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "46",
+          "attr_alias": "46",
+          "order_id": 59,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037884,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-2-1/dd25b431eac378767a017d1aecdfaee9.jpg",
+        "idpas": "2840040,2840044",
+        "attr_name": "颜色:浅雾紫/嫩芽绿/甘蓝紫;尺码:46",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578474",
+        "stock": 0,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1733254000,
+        "id_pa_group": [
+          2840040,
+          2840044
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840041,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "芯片灰/基础黑",
+          "attr_alias": "112441106Q-3",
+          "order_id": 3,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-1/dde08eb68956b76d45e64429535501a5.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840047,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "39",
+          "attr_alias": "39",
+          "order_id": 46,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037897,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-1/dde08eb68956b76d45e64429535501a5.jpg",
+        "idpas": "2840041,2840047",
+        "attr_name": "颜色:芯片灰/基础黑;尺码:39",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578665",
+        "stock": 11,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1735758632,
+        "id_pa_group": [
+          2840041,
+          2840047
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840041,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "芯片灰/基础黑",
+          "attr_alias": "112441106Q-3",
+          "order_id": 3,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-1/dde08eb68956b76d45e64429535501a5.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840046,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "40",
+          "attr_alias": "40",
+          "order_id": 47,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037896,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-1/dde08eb68956b76d45e64429535501a5.jpg",
+        "idpas": "2840041,2840046",
+        "attr_name": "颜色:芯片灰/基础黑;尺码:40",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578658",
+        "stock": 42,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736276116,
+        "id_pa_group": [
+          2840041,
+          2840046
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840041,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "芯片灰/基础黑",
+          "attr_alias": "112441106Q-3",
+          "order_id": 3,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-1/dde08eb68956b76d45e64429535501a5.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840045,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "41",
+          "attr_alias": "41",
+          "order_id": 49,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037895,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-1/dde08eb68956b76d45e64429535501a5.jpg",
+        "idpas": "2840041,2840045",
+        "attr_name": "颜色:芯片灰/基础黑;尺码:41",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578641",
+        "stock": 80,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736450010,
+        "id_pa_group": [
+          2840041,
+          2840045
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840041,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "芯片灰/基础黑",
+          "attr_alias": "112441106Q-3",
+          "order_id": 3,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-1/dde08eb68956b76d45e64429535501a5.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840048,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "42",
+          "attr_alias": "42",
+          "order_id": 51,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037898,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-1/dde08eb68956b76d45e64429535501a5.jpg",
+        "idpas": "2840041,2840048",
+        "attr_name": "颜色:芯片灰/基础黑;尺码:42",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578634",
+        "stock": 93,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736450118,
+        "id_pa_group": [
+          2840041,
+          2840048
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840041,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "芯片灰/基础黑",
+          "attr_alias": "112441106Q-3",
+          "order_id": 3,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-1/dde08eb68956b76d45e64429535501a5.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840049,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "42.5",
+          "attr_alias": "42.5",
+          "order_id": 52,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037899,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-1/dde08eb68956b76d45e64429535501a5.jpg",
+        "idpas": "2840041,2840049",
+        "attr_name": "颜色:芯片灰/基础黑;尺码:42.5",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578627",
+        "stock": 45,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736276112,
+        "id_pa_group": [
+          2840041,
+          2840049
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840041,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "芯片灰/基础黑",
+          "attr_alias": "112441106Q-3",
+          "order_id": 3,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-1/dde08eb68956b76d45e64429535501a5.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840051,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "43",
+          "attr_alias": "43",
+          "order_id": 53,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037901,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-1/dde08eb68956b76d45e64429535501a5.jpg",
+        "idpas": "2840041,2840051",
+        "attr_name": "颜色:芯片灰/基础黑;尺码:43",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578610",
+        "stock": 103,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736450083,
+        "id_pa_group": [
+          2840041,
+          2840051
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840041,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "芯片灰/基础黑",
+          "attr_alias": "112441106Q-3",
+          "order_id": 3,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-1/dde08eb68956b76d45e64429535501a5.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840043,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "44",
+          "attr_alias": "44",
+          "order_id": 55,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037893,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-1/dde08eb68956b76d45e64429535501a5.jpg",
+        "idpas": "2840041,2840043",
+        "attr_name": "颜色:芯片灰/基础黑;尺码:44",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578603",
+        "stock": 33,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736450019,
+        "id_pa_group": [
+          2840041,
+          2840043
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840041,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "芯片灰/基础黑",
+          "attr_alias": "112441106Q-3",
+          "order_id": 3,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-1/dde08eb68956b76d45e64429535501a5.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840050,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "44.5",
+          "attr_alias": "44.5",
+          "order_id": 56,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037900,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-1/dde08eb68956b76d45e64429535501a5.jpg",
+        "idpas": "2840041,2840050",
+        "attr_name": "颜色:芯片灰/基础黑;尺码:44.5",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578597",
+        "stock": 37,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736276114,
+        "id_pa_group": [
+          2840041,
+          2840050
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840041,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "芯片灰/基础黑",
+          "attr_alias": "112441106Q-3",
+          "order_id": 3,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-1/dde08eb68956b76d45e64429535501a5.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840042,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "45",
+          "attr_alias": "45",
+          "order_id": 57,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037892,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-1/dde08eb68956b76d45e64429535501a5.jpg",
+        "idpas": "2840041,2840042",
+        "attr_name": "颜色:芯片灰/基础黑;尺码:45",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578580",
+        "stock": 19,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736318785,
+        "id_pa_group": [
+          2840041,
+          2840042
+        ]
+      }
+    },
+    {
+      "attr": [
+        {
+          "id_pa": 2840041,
+          "id_pac": 1,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "芯片灰/基础黑",
+          "attr_alias": "112441106Q-3",
+          "order_id": 3,
+          "image_url": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-1/dde08eb68956b76d45e64429535501a5.jpg",
+          "video_url": "",
+          "attr_cate_name": "颜色",
+          "attr_cate_code": "color"
+        },
+        {
+          "id_pa": 2840044,
+          "id_pac": 5,
+          "status": 0,
+          "id_goods": 314868,
+          "attr_name": "46",
+          "attr_alias": "46",
+          "order_id": 59,
+          "image_url": "",
+          "video_url": "",
+          "attr_cate_name": "尺码",
+          "attr_cate_code": "size"
+        }
+      ],
+      "info": {
+        "id_sku": 5037894,
+        "id_shop": 1,
+        "id_goods": 314868,
+        "shop_price": "799.00",
+        "market_price": "799.00",
+        "image": "https://img.fishfay.com/shopgoods/21/112441106Q/112441106Q-3-1/dde08eb68956b76d45e64429535501a5.jpg",
+        "idpas": "2840041,2840044",
+        "attr_name": "颜色:芯片灰/基础黑;尺码:46",
+        "title": "篮球鞋",
+        "status": 0,
+        "sku": "6901849578573",
+        "stock": 7,
+        "lock_stock": 0,
+        "sale_stock": 0,
+        "sync_lock": "0",
+        "update_time": 1736450029,
+        "id_pa_group": [
+          2840041,
+          2840044
+        ]
+      }
+    }
+  ],
+  "image_master_key": [
+    2840039,
+    2840040,
+    2840041
+  ],
+  "has_rank_price": 0,
+  "is_join_points": 1,
+  "is_join_coupon": 1,
+  "is_join_promo": 1,
+  "is_join_ticket": 1,
+  "is_join_vip": 1,
+  "is_join_store_card": 1,
+  "is_join_gift_card": 1,
+  "is_join_uniform_card": 1,
+  "is_join_discount": 1,
+  "promos": [],
+  "isCollection": 0
+}
