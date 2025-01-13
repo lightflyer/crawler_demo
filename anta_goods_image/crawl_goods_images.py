@@ -67,7 +67,7 @@ class CrawlTask(SQLModel, table=True):
     status: TaskStatus = Field(default=TaskStatus.PENDING)
     created_at: datetime = Field(default_factory=datetime.now)
     updated_at: datetime = Field(default_factory=datetime.now)
-    callback: str
+    callback: str | None = Field(default=None)
     request_data: str = Field(default='{}', sa_type=JSON)
     parse_params: str = Field(default='{}', sa_type=JSON)
     method: RequestType
@@ -75,15 +75,24 @@ class CrawlTask(SQLModel, table=True):
     parent_id: int | None = Field(default=None)
     children_id: List[int] = Field(default=[], sa_type=JSON)
 
+    # def model_dump(self, **kwargs):
+    #     data = super().model_dump(**kwargs)
+    #     # 转换 datetime 为 ISO 格式字符串
+    #     if 'created_at' in data:
+    #         data['created_at'] = data['created_at'].isoformat()
+    #     if 'updated_at' in data:
+    #         data['updated_at'] = data['updated_at'].isoformat()
+    #     return data
+
 class Image(SQLModel, table=True):
     id: int = Field(default=None, primary_key=True)
     url: str = Field(unique=True, index=True)
     image_type: ImageType
     save_path: str = Field(unique=True, index=True)
     image_name: str
-    goods_id: str
+    goods_id: int | None = Field(default=None)
     attr_alias: str
-    created_at: datetime = Field(default=datetime.now())
+    created_at: datetime = Field(default_factory=datetime.now)
 
 class AntaGoods(SQLModel, table=True):
     id: int = Field(default=None, primary_key=True)
@@ -100,7 +109,8 @@ class AntaGoods(SQLModel, table=True):
     cate_id: str
     brand_id: str
     children_info: List[Dict[str, Any]] = Field(default=[], sa_type=JSON)
-    created_at: datetime = Field(default=datetime.now())
+    image_ids: List[int] = Field(default=[], sa_type=JSON)
+    created_at: datetime = Field(default_factory=datetime.now)
     
 
 def check_dirs() -> None:
@@ -131,7 +141,7 @@ class TaskManager:
             # 更新任务状态
             for key, value in task.model_dump(exclude={'id'}).items():
                 setattr(db_task, key, value)
-            db_task.updated_at = datetime.now()
+            # db_task.updated_at = datetime.now()
             
             session.add(db_task)
             session.commit()
@@ -145,7 +155,7 @@ class TaskManager:
                 return None
             
             db_task.status = status
-            db_task.updated_at = datetime.now()
+            # db_task.updated_at = datetime.now()
             if exception:
                 db_task.exception = exception
             
@@ -153,7 +163,7 @@ class TaskManager:
             session.commit()
             return db_task.id
     
-    def get_pending_task(self) -> list[CrawlTask]:
+    def get_pending_task(self) -> list[dict]:
         with Session(self.engine) as session:
             statement = select(CrawlTask).where(
                 CrawlTask.status == TaskStatus.PENDING
@@ -161,15 +171,13 @@ class TaskManager:
             
             tasks = session.exec(statement).all()
             
-            # 在返回之前，将任务对象转换为字典
-            task_dicts = [task.model_dump() for task in tasks]
-            
             # 更新状态
             for task in tasks:
                 task.status = TaskStatus.RUNNING
-                task.updated_at = datetime.now()
+                # task.updated_at = datetime.now()
                 session.add(task)
             
+            task_dicts = [task.model_dump() for task in tasks]
             session.commit()
             
             # 返回任务字典列表
@@ -188,7 +196,7 @@ class SpiderMixin:
 
     def task2request(self, task: CrawlTask) -> Request:
 
-        if not hasattr(self, task.callback):
+        if not task.callback or not hasattr(self, task.callback):
             callback = None
         else:
             callback = getattr(self, task.callback)
@@ -202,14 +210,12 @@ class SpiderMixin:
         )
     
     async def download_flow(self, request: Request) -> Response:
-        try:
-            result = await self.request_middleware(request)
-            if isinstance(result, Request):
-                return await self.request(result)
-            response = await self.response_middleware(result)
-            return response
-        except Exception as e:
-            return Response(status_code=500, text=str(e))
+        
+        result = await self.request_middleware(request)
+        if isinstance(result, Request):
+            return await self.request(result)
+        response = await self.response_middleware(result)
+        return response
 
     async def request_middleware(self, request: Request) -> Response | Request:
         return request
@@ -218,7 +224,7 @@ class SpiderMixin:
         return response
     
     async def request(self, request: Request) -> Response:
-        with AsyncClient() as client:
+        async with AsyncClient() as client:
             response = await client.request(request.method, request.url, **request.request_data)
             return response
         
@@ -232,6 +238,9 @@ class SpiderMixin:
     
     async def run(self) -> None:
         raise NotImplementedError("Subclass must implement run method")
+    
+    async def close(self) -> None:
+        raise NotImplementedError("Subclass must implement close method")
             
 class Spider(SpiderMixin):
     def __init__(self, engine: Engine) -> None:
@@ -240,66 +249,81 @@ class Spider(SpiderMixin):
 
     async def crawl(self, task_dict: dict) -> None:
         try:
-            # TODO: 取消session
-            with Session(self.engine) as session:
-                # 从字典创建新的任务对象
-                task = CrawlTask(**task_dict)
-                
-                # 更新任务状态为运行中
-                self.task_manager.update_task_status(task.id, TaskStatus.RUNNING)
-                
-                request = self.task2request(task)
-                response = await self.download_flow(request)
-                children_task_ids = []
-                
-                if request.callback:
-                    result = request.callback(response, **request.parse_params)
-                    if inspect.isasyncgen(result):
-                        async for item in result:
-                            if isinstance(item, Request):
-                                new_task = self.request2task(item)
-                                new_task.parent_id = task.id
-                                task_id = self.task_manager.add_task(new_task)
-                                children_task_ids.append(task_id)
-                            elif isinstance(item, SQLModel):
-                                await self.pipeline(item)
-                    else:
-                        logger.error(f"Invalid callback result: {result}")
-                
-                task.children_id = children_task_ids
-                task.status = TaskStatus.COMPLETED
-                # 更新任务状态为完成
-                self.task_manager.update_task(task)
+            logger.info(f"Processing task {task_dict['id']} for URL: {task_dict['url']}, Callback: {task_dict['callback']}")
+            task = CrawlTask(**task_dict)
+
+            logger.debug(f"Downloading URL: {task.url}")
+            request = self.task2request(task)
+            response = await self.download_flow(request)
+            logger.debug(f"Downloaded response status: {response.status_code}")
+            children_task_ids = []
+            
+            if request.callback:
+                logger.debug(f"Processing callback: {request.callback.__name__}")
+                result = request.callback(response, **request.parse_params)
+                if inspect.isasyncgen(result):
+                    async for item in result:
+                        if isinstance(item, Request):
+                            new_task = self.request2task(item)
+                            new_task.parent_id = task.id
+                            task_id = self.task_manager.add_task(new_task)
+                            children_task_ids.append(task_id)
+                            logger.debug(f"Added child task {task_id} for URL: {item.url}")
+                        elif isinstance(item, SQLModel):
+                            logger.debug(f"Processing pipeline for item: {item}")
+                            item = await self.pipeline(item)
+                            logger.info(f"Crawl result: {type(item).__name__}")
+                else:
+                    logger.error(f"Invalid callback result: {result}")
+            
+            task.children_id = children_task_ids
+            task.status = TaskStatus.COMPLETED
+            # 更新任务状态为完成
+            self.task_manager.update_task(task)
                 
         except Exception as e:
             logger.error(f"Error in crawl: {e}")
             # 更新任务状态为失败
             self.task_manager.update_task_status(
-                task_dict['id'],  # 使用字典中的ID
+                task_dict["id"],  
                 TaskStatus.FAILED,
                 exception=str(e)
             )
 
+    async def close(self) -> None:
+        logger.info("Closing spider...")
+        
+
     async def run(self) -> None:
         # 获取初始请求
+        logger.info("Starting spider...")
+        request_count = 0
         async for request in self.start_request():
             task = self.request2task(request)
             self.task_manager.add_task(task)
+            task_id = self.task_manager.add_task(task)
+            request_count += 1
+            logger.info(f"Added initial task {task_id} for URL: {request.url}")
+
+        logger.info(f"Added {request_count} initial tasks")
 
         terminate_time = 60
         while True:
             # 获取待处理任务
             task_dicts = self.task_manager.get_pending_task()
             if not task_dicts:
-                logger.info("No pending task found")
+                logger.info(f"No pending tasks found. Will terminate in {terminate_time} seconds")
                 terminate_time -= 1
             else:
                 terminate_time = 60
+                logger.info(f"Processing {len(task_dicts)} tasks...")
                 await asyncio.gather(*[self.crawl(task_dict) for task_dict in task_dicts])
             
             await asyncio.sleep(1)
             if terminate_time <= 0:
+                logger.info("Terminating spider due to no tasks")
                 break
+        await self.close()
 
 
 class DataManager:
@@ -339,13 +363,7 @@ class DataManager:
                 session.add(goods)
                 session.commit()
                 return goods.id
-
-        except IntegrityError as e:
-            self.session.rollback()
-            logger.error(f"IntegrityError while adding goods: {e}")
-            raise
         except Exception as e:
-            self.session.rollback() 
             logger.error(f"Error while adding goods: {e}")
             raise
     
@@ -418,13 +436,16 @@ class GoodsImageSpider(Spider):
             new_task = CrawlTask(
                 url=image.url,
                 method=RequestType.GET,
-                request_data={},
+                request_data=json.dumps({}),
                 callback=None,
-                parse_params={}
+                parse_params=json.dumps({})
             )
+            # print("image download task: ", new_task)
             new_task.status = TaskStatus.RUNNING
             request = self.task2request(new_task)
+            # print("image download request: ", request)
             response = await self.download_flow(request)
+            # print("image download response: ", response)
             if response.status_code == 200:
                 with open(image.save_path, "wb") as f:
                     f.write(response.content)
@@ -489,15 +510,7 @@ class GoodsImageSpider(Spider):
                 brand_id=product_data.get("id_brand", ""),
                 children_info=product_data.get("sku_info", []),
             )
-            colors = {}
-            for color_id, color_info in product_data.get("color", {}).items():
-                color_id = color_info.get("id_pa", "")
-                if color_id:
-                    colors[color_id] = {
-                        "attr_name": color_info.get("attr_name", ""),
-                        "attr_alias": color_info.get("attr_alias", ""),
-                        "order_id": color_info.get("order_id", ""),
-                    }
+            
             image_data = product_data.get("image", {})
             
             images = []
@@ -512,12 +525,24 @@ class GoodsImageSpider(Spider):
                 image_name = f"{image.attr_alias}-{ImageType.DETAIL}_{item.get('order_id', '')}.{image_suffix}"
                 image.image_name = image_name
                 if len(goods_cate) >= 2:
-                    image.save_path = IMAGE_DIR.joinpath(NAMESPACE.get(goods_cate[0], ""), NAMESPACE.get(goods_cate[1], ""), "detail", image.image_name)
+                    image.save_path = str(IMAGE_DIR.joinpath(NAMESPACE.get(goods_cate[0], ""), NAMESPACE.get(goods_cate[1], ""), "detail", image.image_name))
                 else:
-                    image.save_path = IMAGE_DIR.joinpath("detail", image.image_name)
+                    image.save_path = str(IMAGE_DIR.joinpath("detail", image.image_name))
                 images.append(image)
 
             main_images = image_data.get("master", {})
+            print("main_images: ", main_images)
+
+            colors = {}
+            for color_id, color_info in product_data.get("color", {}).items():
+                color_id = color_info.get("id_pa", "")
+                if color_id:
+                    colors[color_id] = {
+                        "attr_name": color_info.get("attr_name", ""),
+                        "attr_alias": color_info.get("attr_alias", ""),
+                        "order_id": color_info.get("order_id", ""),
+                    }
+            print("colors: ", colors)
             for color_id, color_info in colors.items():
                 for _, main_image_item in main_images.get(color_id, {}).items():
                     image = Image()
@@ -529,9 +554,9 @@ class GoodsImageSpider(Spider):
                     image_name = f"{image.attr_alias}-{ImageType.MAIN}_{item.get('order_id', '')}.{image_suffix}"
                     image.image_name = image_name
                     if len(goods_cate) >= 2:
-                        image.save_path = IMAGE_DIR.joinpath(NAMESPACE.get(goods_cate[0], ""), NAMESPACE.get(goods_cate[1], ""), "main", image.image_name)
+                        image.save_path = str(IMAGE_DIR.joinpath(NAMESPACE.get(goods_cate[0], ""), NAMESPACE.get(goods_cate[1], ""), "main", image.image_name))
                     else:
-                        image.save_path = IMAGE_DIR.joinpath("main", image.image_name)
+                        image.save_path = str(IMAGE_DIR.joinpath("main", image.image_name))
                     images.append(image)
             
             results = await asyncio.gather(*[self.download_image(image) for image in images])
@@ -555,8 +580,8 @@ class GoodsImageSpider(Spider):
                     print(f"- Image URL: {image.url}")
                     print(f"  Goods ID: {image.goods_id}")
                     print(f"  Image type: {image.image_type}")
-            image_ids = self.data_manager.add_images(successful_images)
-            goods.image_ids = image_ids
+            successful_ids, failed_images = self.data_manager.add_images(successful_images)
+            goods.image_ids = successful_ids
             yield goods
 
     async def parse_primary_categories(self, response: Response) -> AsyncGenerator[Type[SQLModel], Any]:
@@ -669,10 +694,44 @@ def init_db(db_url: str) -> Engine:
     SQLModel.metadata.create_all(engine)
     return engine
 
+# 配置日志
+def setup_logging():
+    # 创建日志文件夹
+    log_dir = Path(__file__).parent / 'logs'
+    log_dir.mkdir(exist_ok=True)
+    
+    # 配置日志格式
+    log_format = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    logging.basicConfig(
+        level=logging.DEBUG,
+        format=log_format,
+        handlers=[
+            # 输出到控制台
+            logging.StreamHandler(),
+            # 输出到文件
+            logging.FileHandler(
+                filename=log_dir / f'spider_{datetime.now().strftime("%Y%m%d_%H%M%S")}.log',
+                encoding='utf-8'
+            )
+        ]
+    )
+    
+    # 设置第三方库的日志级别
+    logging.getLogger('httpx').setLevel(logging.WARNING)
+    logging.getLogger('httpcore').setLevel(logging.WARNING) 
+    logging.getLogger('sqlalchemy').setLevel(logging.WARNING)
+
+
 def main():
+    # 设置日志
+    setup_logging()
+    # 检查目录
     check_dirs()
+    # 初始化数据库
     engine = init_db("sqlite:///anta_goods.db")
+    # 创建爬虫
     spider = GoodsImageSpider(engine)
+    # 运行爬虫
     asyncio.run(spider.run())
 
 if __name__ == "__main__":
