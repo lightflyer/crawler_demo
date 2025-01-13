@@ -1,5 +1,6 @@
 import asyncio
 import copy
+from functools import wraps
 from itertools import product
 from pathlib import Path
 import re
@@ -75,14 +76,16 @@ class CrawlTask(SQLModel, table=True):
     parent_id: int | None = Field(default=None)
     children_id: List[int] = Field(default=[], sa_type=JSON)
 
-    # def model_dump(self, **kwargs):
-    #     data = super().model_dump(**kwargs)
-    #     # 转换 datetime 为 ISO 格式字符串
-    #     if 'created_at' in data:
-    #         data['created_at'] = data['created_at'].isoformat()
-    #     if 'updated_at' in data:
-    #         data['updated_at'] = data['updated_at'].isoformat()
-    #     return data
+    def model_dump(self, **kwargs):
+        data = super().model_dump(**kwargs)
+        # 转换 datetime 为 ISO 格式字符串
+        if 'created_at' in data:
+            data['created_at'] = data['created_at'].isoformat()
+        if 'updated_at' in data:
+            data['updated_at'] = data['updated_at'].isoformat()
+        return data
+
+    
 
 class Image(SQLModel, table=True):
     id: int = Field(default=None, primary_key=True)
@@ -97,8 +100,8 @@ class Image(SQLModel, table=True):
 class AntaGoods(SQLModel, table=True):
     id: int = Field(default=None, primary_key=True)
     alias_id: str
-    market_price: float
-    price: float
+    market_price: str
+    price: str
     name: str
     info: str
     description: str
@@ -120,6 +123,55 @@ def check_dirs() -> None:
         dir = IMAGE_DIR.joinpath(*dir)
         dir.mkdir(parents=True, exist_ok=True)
 
+class SpiderError(Exception):
+    """自定义爬虫异常类"""
+    def __init__(self, message: str, original_error: Exception = None, context: dict = None):
+        self.message = message
+        self.original_error = original_error
+        self.context = context or {}
+        super().__init__(self.message)
+
+def log_error(logger):
+    def decorator(func):
+        @wraps(func)
+        async def wrapper(*args, **kwargs):
+            try:
+                if inspect.isasyncgenfunction(func):
+                    # 如果是异步生成器，使用 async for 迭代并 yield 每个值
+                    async for item in func(*args, **kwargs):
+                        yield item
+                else:
+                    # 如果是普通异步函数，yield 它的结果
+                    result = await func(*args, **kwargs)
+                    yield result
+            except Exception as e:
+                # 获取错误上下文
+                func_name = func.__name__
+                class_name = args[0].__class__.__name__ if args else None
+                
+                # 构建错误消息
+                error_msg = f"Error in {class_name}.{func_name}: {str(e)}"
+                
+                # 构建上下文信息
+                context = {
+                    "function": func_name,
+                    "class": class_name,
+                    "args": repr(args[1:]),
+                    "kwargs": repr(kwargs),
+                    "original_error_type": type(e).__name__
+                }
+                
+                # 记录日志
+                logger.error(error_msg, exc_info=True)
+                
+                # 抛出新的异常
+                raise SpiderError(
+                    message=error_msg,
+                    original_error=e,
+                    context=context
+                ) from e
+        return wrapper
+    return decorator
 
 class TaskManager:
     def __init__(self, engine: Engine):
@@ -233,7 +285,7 @@ class SpiderMixin:
     async def pipeline(self, result: Type[SQLModel]) -> None:
         raise NotImplementedError("Subclass must implement pipeline method")
     
-    def start_request(self) -> list[Request]:
+    async def start_request(self) -> AsyncGenerator[Request, None]:
         raise NotImplementedError("Subclass must implement start method")
     
     async def run(self) -> None:
@@ -255,11 +307,11 @@ class Spider(SpiderMixin):
             logger.debug(f"Downloading URL: {task.url}")
             request = self.task2request(task)
             response = await self.download_flow(request)
-            logger.debug(f"Downloaded response status: {response.status_code}")
+            logger.debug(f"Downloaded response status: {response.status_code} for URL: {task.url}")
             children_task_ids = []
             
             if request.callback:
-                logger.debug(f"Processing callback: {request.callback.__name__}")
+                logger.debug(f"Processing callback: {request.callback.__name__} for URL: {task.url}")
                 result = request.callback(response, **request.parse_params)
                 if inspect.isasyncgen(result):
                     async for item in result:
@@ -270,9 +322,10 @@ class Spider(SpiderMixin):
                             children_task_ids.append(task_id)
                             logger.debug(f"Added child task {task_id} for URL: {item.url}")
                         elif isinstance(item, SQLModel):
-                            logger.debug(f"Processing pipeline for item: {item}")
+                            logger.debug(f"Processing pipeline for {task.url}: {item}")
                             item = await self.pipeline(item)
-                            logger.info(f"Crawl result: {type(item).__name__}")
+                        else:
+                            logger.error(f"Invalid callback result: {result}")
                 else:
                     logger.error(f"Invalid callback result: {result}")
             
@@ -282,12 +335,21 @@ class Spider(SpiderMixin):
             self.task_manager.update_task(task)
                 
         except Exception as e:
-            logger.error(f"Error in crawl: {e}")
+            # 记录详细的错误信息
+            logger.error(
+                f"Error in crawl for task {task_dict['id']}: {str(e)}", 
+                exc_info=True,  # 这会记录完整的错误堆栈
+                extra={
+                    'task_id': task_dict['id'],
+                    'url': task_dict['url'],
+                    'callback': task_dict['callback']
+                }
+            )
             # 更新任务状态为失败
             self.task_manager.update_task_status(
                 task_dict["id"],  
                 TaskStatus.FAILED,
-                exception=str(e)
+                exception=f"{type(e).__name__}: {str(e)}"  # 包含错误类型
             )
 
     async def close(self) -> None:
@@ -422,6 +484,9 @@ class GoodsImageSpider(Spider):
     def __init__(self, engine: Engine) -> None:
         super().__init__(engine)
         self.data_manager = DataManager(engine)
+        self.general_headers = {
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        }
 
     async def pipeline(self, result: Type[SQLModel]) -> None:
         try:
@@ -431,7 +496,6 @@ class GoodsImageSpider(Spider):
             raise e
         
     async def download_image(self, image: Image) -> bool:
-        
         try:
             new_task = CrawlTask(
                 url=image.url,
@@ -460,11 +524,55 @@ class GoodsImageSpider(Spider):
             new_task.exception = str(e)
             return False
         finally:
-            self.task_manager.add_task(new_task)
+            try:
+                self.task_manager.add_task(new_task)
+            except Exception as e:
+                logger.error(f"Error saving download task: {str(e)}")
 
+    @log_error(logger)
     async def parse_goods_list(self, response: Response, goods_cate: List[str]) -> AsyncGenerator[Request | Type[SQLModel], Any]:
         data = response.json()
-        for item in data.get("data", []):
+        info = data.get("info", {})
+        if info.get("_page") > (current_page:=int(info.get("_p"))):
+            yield Request(
+                url=str(response.url),
+                method=RequestType.POST,
+                request_data={"content": f"p={current_page + 1}", "headers": self.general_headers},
+                callback=self.parse_goods_list,
+                parse_params={"goods_cate": goods_cate}
+            )
+        
+        # 获取商品ID列表
+        id_goods = data.get("id_goods", {})
+        goods_ids = []
+        
+        if isinstance(id_goods, dict):
+            # 如果是字典，获取所有值
+            goods_ids.extend(id_goods.values())
+        elif isinstance(id_goods, list):
+            # 如果是列表，直接使用
+            goods_ids.extend(id_goods)
+        else:
+            # 记录意外情况
+            logger.warning(f"Unexpected id_goods type: {type(id_goods)}, value: {id_goods}")
+        
+        # 确保所有ID都是有效的
+        goods_ids = [str(gid) for gid in goods_ids if gid]
+        
+        logger.debug(f"Found {len(goods_ids)} goods IDs for URL: {response.url}")
+        
+        for goods_id in goods_ids:
+            yield Request(
+                url=f"https://www.anta.cn/goods-{goods_id}.html",
+                method=RequestType.GET,
+                request_data={},
+                callback=self.parse_goods_detail,
+                parse_params={"goods_cate": goods_cate}
+            )
+    @log_error(logger)
+    async def parse_get_goods(self, response: Response, goods_cate: List[str]) -> AsyncGenerator[Request | Type[SQLModel], Any]:
+        data = response.json()
+        for item in data.get("info", []):
             info = item.get("info", {})
             params = copy.deepcopy(item)
             params["goods_cate"] = goods_cate
@@ -476,7 +584,7 @@ class GoodsImageSpider(Spider):
                 callback=self.parse_goods_detail,
                 parse_params=params
             )
-
+    @log_error(logger)
     async def parse_goods_detail(self, response: Response, **kwargs) -> AsyncGenerator[Type[SQLModel], Any]:
         goods_cate = kwargs.get("goods_cate", [])
         script_match = re.search(r'var\s+proData\s*=\s*({.*?});(?=\s*var|</script>)', response.text, re.DOTALL)
@@ -515,14 +623,14 @@ class GoodsImageSpider(Spider):
             
             images = []
 
-            for item in image_data.get("bd", []):
+            for detail_item in image_data.get("bd", []):
                 image = Image()
-                image.url = item.get("path", "")
+                image.url = detail_item.get("path", "")
                 image.image_type = ImageType.DETAIL
-                image.goods_id = item.get("id_goods", "")
+                image.goods_id = detail_item.get("id_goods", "")
                 image_suffix = image.url.split(".")[-1]
                 image.attr_alias = "-".join([*goods_cate, product_keyword])
-                image_name = f"{image.attr_alias}-{ImageType.DETAIL}_{item.get('order_id', '')}.{image_suffix}"
+                image_name = f"{image.attr_alias}-{ImageType.DETAIL.value}_{detail_item.get('order_id', '')}.{image_suffix}"
                 image.image_name = image_name
                 if len(goods_cate) >= 2:
                     image.save_path = str(IMAGE_DIR.joinpath(NAMESPACE.get(goods_cate[0], ""), NAMESPACE.get(goods_cate[1], ""), "detail", image.image_name))
@@ -531,7 +639,7 @@ class GoodsImageSpider(Spider):
                 images.append(image)
 
             main_images = image_data.get("master", {})
-            print("main_images: ", main_images)
+            # print("main_images: ", main_images)
 
             colors = {}
             for color_id, color_info in product_data.get("color", {}).items():
@@ -542,22 +650,23 @@ class GoodsImageSpider(Spider):
                         "attr_alias": color_info.get("attr_alias", ""),
                         "order_id": color_info.get("order_id", ""),
                     }
-            print("colors: ", colors)
+
             for color_id, color_info in colors.items():
-                for _, main_image_item in main_images.get(color_id, {}).items():
+                for _, main_image_item in main_images.get(str(color_id), {}).items():
                     image = Image()
                     image.url = main_image_item.get("path", "")
                     image.image_type = ImageType.MAIN
                     image.goods_id = main_image_item.get("id_goods", "")
                     image.attr_alias = "-".join([*goods_cate, product_keyword, color_info.get("attr_name", "")])
                     image_suffix = image.url.split(".")[-1]
-                    image_name = f"{image.attr_alias}-{ImageType.MAIN}_{item.get('order_id', '')}.{image_suffix}"
-                    image.image_name = image_name
+                    image_name = f"{image.attr_alias}-{ImageType.MAIN.value}-{main_image_item.get('order_id', '')}.{image_suffix}"
+                    image.image_name = sanitize_filename(image_name)
                     if len(goods_cate) >= 2:
                         image.save_path = str(IMAGE_DIR.joinpath(NAMESPACE.get(goods_cate[0], ""), NAMESPACE.get(goods_cate[1], ""), "main", image.image_name))
                     else:
                         image.save_path = str(IMAGE_DIR.joinpath("main", image.image_name))
                     images.append(image)
+                    
             
             results = await asyncio.gather(*[self.download_image(image) for image in images])
             successful_images = []
@@ -584,6 +693,7 @@ class GoodsImageSpider(Spider):
             goods.image_ids = successful_ids
             yield goods
 
+    @log_error(logger)
     async def parse_primary_categories(self, response: Response) -> AsyncGenerator[Type[SQLModel], Any]:
         data = response.json()
         primary_categories = []
@@ -594,25 +704,26 @@ class GoodsImageSpider(Spider):
             if item.get("code") == "e":
                 primary_categories.extend(item.get("_child", {}).values())
                 
-                yield Request()
+                # yield Request()
         categories = product(sex_categories, primary_categories)
         for sex_category, primary_category in categories:
             cate_code = f"j{sex_category.get("code")}-e{primary_category.get("code")}"
             goods_cate = [sex_category.get("name"), primary_category.get("name")]
-            url = URL(response.url).join(f"/{cate_code}")
+            url = f"{str(response.url)}/{cate_code}"
             yield Request(
-                url=str(url),
+                url=url,
                 method=RequestType.POST,
                 request_data={},
                 callback=self.parse_secondary_categories,
                 parse_params={"goods_cate": goods_cate}
             )
-            break
-        
+            # # TODO: 测试流程采用break
+            # break
+    @log_error(logger)    
     async def parse_secondary_categories(self, response: Response, goods_cate: List[str]) -> AsyncGenerator[Type[SQLModel], Any]:
         data = response.json()
         secondary_categories = []
-        for item in data.get("data", {}).get("newbar", []):
+        for item in data.get("para", {}).get("newbar", []):
             if item.get("code") == "f":
                 secondary_categories.extend(item.get("_child", {}).values())
         for secondary_category in secondary_categories:
@@ -622,29 +733,39 @@ class GoodsImageSpider(Spider):
             yield Request(
                 url=url,
                 method=RequestType.POST,
-                request_data={"content": "p=1"},
+                request_data={"content": "p=1", "headers": self.general_headers},
                 callback=self.parse_goods_list,
                 parse_params={"goods_cate": goods_cate}
             )
+            # TODO: 测试流程采用break
             break
-
+    @log_error(logger)
     async def start_request(self) -> AsyncGenerator[Request, Any]:
-        # url = "https://www.anta.cn/list"
-        # yield Request(
-        #     url=url,
-        #     method=RequestType.POST,
-        #     request_data={},
-        #     callback=self.parse_primary_categories,
-        #     parse_params={}
-        # )
-        url = "https://www.anta.cn/goods-314868.html"
+        url = "https://www.anta.cn/list"
         yield Request(
             url=url,
-            method=RequestType.GET,
+            method=RequestType.POST,
             request_data={},
-            callback=self.parse_goods_detail,
-            parse_params={"goods_cate": ["男性", "鞋类", "篮球鞋"]}
+            callback=self.parse_primary_categories,
+            parse_params={}
         )
+        # url = "https://www.anta.cn/goods-314868.html"
+        # yield Request(
+        #     url=url,
+        #     method=RequestType.GET,
+        #     request_data={},
+        #     callback=self.parse_goods_detail,
+        #     parse_params={"goods_cate": ["男性", "鞋类", "篮球鞋"]}
+        # )
+def sanitize_filename(filename: str) -> str:
+    """清理文件名中的特殊字符"""
+    # 替换反斜杠和正斜杠为下划线
+    filename = re.sub(r'[/\\]', '_', filename)
+    # 替换其他不安全的文件名字符
+    filename = re.sub(r'[<>:"|?*]', '', filename)
+    # 移除前后空格
+    filename = filename.strip()
+    return filename
 
 def clean_json_string(json_str: str) -> str:
     """清理JSON字符串中的无效字符和转义序列"""
